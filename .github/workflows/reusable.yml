@@ -4,5 +4,9 @@ jobs:
     deploy:
         runs-on: ubuntu-latest
         steps:
+            - name: Get Code
+              uses: actions/download-artifact@v8
+              with:
+                name: ${{  }}
             - name: output information
               run: echo "deploying and uploading ..."
