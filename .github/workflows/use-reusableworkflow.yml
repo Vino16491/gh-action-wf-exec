@@ -1,4 +1,4 @@
-name: Website Deployment
+name: Website Deployment reusable
 on:
   push:
     branches:
@@ -72,6 +72,8 @@ jobs:
     uses: ./.github/workflows/reusable.yml
     with:
       artifact-name: dist-files
+    secrets:
+      some-secret: ${{ secrets.some-secret}}
   report:
     needs: [lint, deploy]
     if: failure()
